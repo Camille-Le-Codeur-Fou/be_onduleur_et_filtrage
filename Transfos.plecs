@@ -1,0 +1,180 @@
+Plecs {
+  Name          "Transfos"
+  Version       "4.3"
+  CircuitModel  "ContStateSpace"
+  StartTime     "0.0"
+  StopTime      "1.0"
+  Timeout       ""
+  Solver        "dopri"
+  MaxStep       "1e-3"
+  InitStep      "-1"
+  FixedStep     "1e-3"
+  Refine        "1"
+  ZCStepSize    "1e-9"
+  RelTol        "1e-3"
+  AbsTol        "-1"
+  TurnOnThreshold "0"
+  SyncFixedStepTasks "2"
+  UseSingleCommonBaseRate "2"
+  LossVariableLimitExceededMsg "3"
+  NegativeSwitchLossMsg "3"
+  DivisionByZeroMsg "3"
+  StiffnessDetectionMsg "2"
+  MaxConsecutiveZCs "1000"
+  AlgebraicLoopWithStateMachineMsg "3"
+  AssertionAction "1"
+  InitializationCommands ""
+  InitialState  "1"
+  SystemState   ""
+  CodeGenParameterInlining "2"
+  CodeGenInliningExceptions "AAAACwAAAAAA"
+  CodeGenFloatingPointFormat "2"
+  CodeGenAbsTimeUsageMsg "3"
+  CodeGenBaseName ""
+  CodeGenOutputDir ""
+  CodeGenExtraOpts ""
+  CodeGenTarget "Generic"
+  CodeGenTargetSettings ""
+  ExtendedMatrixPrecision "1"
+  MatrixSignificanceCheck "2"
+  EnableStateSpaceSplitting "2"
+  DisplayStateSpaceSplitting "1"
+  DiscretizationMethod "2"
+  ExternalModeSettings ""
+  AlgebraicLoopMethod "1"
+  AlgebraicLoopTolerance "1e-6"
+  ScriptsDialogGeometry ""
+  ScriptsDialogSplitterPos "0"
+  Schematic {
+    Location      [0, 23; 1920, 991]
+    ZoomFactor    1
+    SliderPosition [0, 0]
+    ShowBrowser   off
+    BrowserWidth  100
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Electrical/Transformers/Linear Trafo2"
+      Name          base64 "VHJhbnNmbyBFbnRyw6ll"
+      Show          on
+      Position      [135, 65]
+      Direction     up
+      Flipped       off
+      Frame         [-25, -15; 25, 15]
+      LabelPosition [0, 17]
+      LabelAlign    up
+      Parameter {
+        Variable      "L"
+        Value         "[43.5e-3 556e-6]"
+        Show          off
+      }
+      Parameter {
+        Variable      "R"
+        Value         "[2.4 30e-3]"
+        Show          off
+      }
+      Parameter {
+        Variable      "n"
+        Value         "8.84"
+        Show          off
+      }
+      Parameter {
+        Variable      "Lm"
+        Value         "80"
+        Show          off
+      }
+      Parameter {
+        Variable      "Rm"
+        Value         "inf"
+        Show          off
+      }
+      Parameter {
+        Variable      "i0"
+        Value         "[0 0]"
+        Show          off
+      }
+      Terminal {
+        Type          Port
+        Position      [-30, -10]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [-30, 10]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [30, -10]
+        Direction     right
+      }
+      Terminal {
+        Type          Port
+        Position      [30, 10]
+        Direction     right
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Electrical/Transformers/Linear Trafo2"
+      Name          "Transfo Sortie"
+      Show          on
+      Position      [135, 145]
+      Direction     down
+      Flipped       on
+      Frame         [-25, -15; 25, 15]
+      LabelPosition [0, 17]
+      LabelAlign    up
+      Parameter {
+        Variable      "L"
+        Value         "[18.5e-3 198e-6]"
+        Show          off
+      }
+      Parameter {
+        Variable      "R"
+        Value         "[1.12 12e-3]"
+        Show          off
+      }
+      Parameter {
+        Variable      "n"
+        Value         "9.65"
+        Show          off
+      }
+      Parameter {
+        Variable      "Lm"
+        Value         "47.7"
+        Show          off
+      }
+      Parameter {
+        Variable      "Rm"
+        Value         "inf"
+        Show          off
+      }
+      Parameter {
+        Variable      "i0"
+        Value         "[0 0]"
+        Show          off
+      }
+      Terminal {
+        Type          Port
+        Position      [-30, -10]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [-30, 10]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [30, -10]
+        Direction     right
+      }
+      Terminal {
+        Type          Port
+        Position      [30, 10]
+        Direction     right
+      }
+    }
+  }
+}
+DemoSignature "Hc0JGAtEzTNtAgMsoVjbcvJjGwT6o3oeC3QtB3BvnRU="

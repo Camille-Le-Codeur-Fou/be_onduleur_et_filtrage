@@ -1,0 +1,381 @@
+Plecs {
+  Name          "filtre_shunt_bode_T_initial"
+  Version       "4.6"
+  CircuitModel  "ContStateSpace"
+  StartTime     "0.0"
+  TimeSpan      "1.0"
+  Timeout       ""
+  Solver        "auto"
+  MaxStep       "1e-3"
+  InitStep      "-1"
+  FixedStep     "1e-3"
+  Refine        "1"
+  ZCStepSize    "1e-9"
+  RelTol        "1e-3"
+  AbsTol        "-1"
+  TurnOnThreshold "0"
+  SyncFixedStepTasks "2"
+  UseSingleCommonBaseRate "2"
+  LossVariableLimitExceededMsg "3"
+  NegativeSwitchLossMsg "3"
+  DivisionByZeroMsg "3"
+  StiffnessDetectionMsg "2"
+  MaxConsecutiveZCs "1000"
+  AlgebraicLoopWithStateMachineMsg "3"
+  AssertionAction "1"
+  InitializationCommands ""
+  InitialState  "1"
+  SystemState   ""
+  TaskingMode   "1"
+  TaskConfigurations ""
+  CodeGenParameterInlining "2"
+  CodeGenFloatingPointFormat "2"
+  CodeGenAbsTimeUsageMsg "3"
+  CodeGenBaseName ""
+  CodeGenOutputDir ""
+  CodeGenExtraOpts ""
+  CodeGenTarget "Generic"
+  CodeGenTargetSettings ""
+  ExtendedMatrixPrecision "1"
+  MatrixSignificanceCheck "2"
+  EnableStateSpaceSplitting "2"
+  DisplayStateSpaceSplitting "1"
+  DiscretizationMethod "2"
+  ExternalModeSettings ""
+  AlgebraicLoopMethod "1"
+  AlgebraicLoopTolerance "1e-6"
+  ScriptsDialogGeometry ""
+  ScriptsDialogSplitterPos "0"
+  Schematic {
+    Location      [0, 23; 1536, 777]
+    ZoomFactor    1
+    SliderPosition [0, 0]
+    ShowBrowser   off
+    BrowserWidth  100
+    Component {
+      Type          CurrentSource
+      Name          "I"
+      Show          on
+      Position      [545, 305]
+      Direction     up
+      Flipped       on
+      Parameter {
+        Variable      "DiscretizationBehavior"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "StateSpaceInlining"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Ammeter
+      Name          "Am1"
+      Show          on
+      Position      [160, 310]
+      Direction     down
+      Flipped       off
+    }
+    Component {
+      Type          SmallSignalPerturbation
+      Name          "Perturbation"
+      Show          on
+      Position      [595, 305]
+      Direction     left
+      Flipped       off
+      Parameter {
+        Variable      "ShowInput"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          SmallSignalResponse
+      Name          "Response"
+      Show          on
+      Position      [100, 310]
+      Direction     left
+      Flipped       off
+      Parameter {
+        Variable      "ShowReference"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "InvertReference"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Inductor
+      Name          "LHF"
+      Show          on
+      Position      [325, 235]
+      Direction     left
+      Flipped       off
+      Parameter {
+        Variable      "L"
+        Value         "2.7e-3"
+        Show          on
+      }
+      Parameter {
+        Variable      "i_init"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Resistor
+      Name          "Ri"
+      Show          on
+      Position      [270, 235]
+      Direction     right
+      Flipped       off
+      Parameter {
+        Variable      "R"
+        Value         "0.05"
+        Show          on
+      }
+    }
+    Component {
+      Type          Capacitor
+      Name          "CHF"
+      Show          on
+      Position      [455, 320]
+      Direction     down
+      Flipped       on
+      Parameter {
+        Variable      "C"
+        Value         "2.4e-3"
+        Show          on
+      }
+      Parameter {
+        Variable      "v_init"
+        Value         "100"
+        Show          off
+      }
+    }
+    Component {
+      Type          Inductor
+      Name          "LBF"
+      Show          on
+      Position      [375, 285]
+      Direction     up
+      Flipped       off
+      Parameter {
+        Variable      "L"
+        Value         "2.5e-3"
+        Show          on
+      }
+      Parameter {
+        Variable      "i_init"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Capacitor
+      Name          "CBF"
+      Show          on
+      Position      [375, 350]
+      Direction     down
+      Flipped       on
+      Parameter {
+        Variable      "C"
+        Value         "9.15e-3"
+        Show          on
+      }
+      Parameter {
+        Variable      "v_init"
+        Value         "1800"
+        Show          off
+      }
+    }
+    Component {
+      Type          Voltmeter
+      Name          "Ve"
+      Show          on
+      Position      [505, 320]
+      Direction     up
+      Flipped       off
+    }
+    Component {
+      Type          Scope
+      Name          "Scope"
+      Show          on
+      Position      [625, 350]
+      Direction     up
+      Flipped       off
+      Location      [0, 0; 0, 0]
+      State         ""
+      SavedViews    ""
+      HeaderState   ""
+      PlotPalettes  ""
+      Axes          "1"
+      TimeRange     "0.0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    ""
+      ShowLegend    "1"
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Perturbation"
+      SrcTerminal   1
+      DstComponent  "I"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Am1"
+      SrcTerminal   3
+      DstComponent  "Response"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "CBF"
+      SrcTerminal   2
+      Points        [375, 405]
+      Branch {
+        Points        [455, 405]
+        Branch {
+          Points        [490, 405]
+          Branch {
+            Points        [545, 405]
+            DstComponent  "I"
+            DstTerminal   2
+          }
+          Branch {
+            Points        [490, 375; 505, 375]
+            DstComponent  "Ve"
+            DstTerminal   2
+          }
+        }
+        Branch {
+          DstComponent  "CHF"
+          DstTerminal   2
+        }
+      }
+      Branch {
+        Points        [160, 405]
+        DstComponent  "Am1"
+        DstTerminal   1
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "LHF"
+      SrcTerminal   1
+      DstComponent  "Ri"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "CHF"
+      SrcTerminal   1
+      Points        [455, 235]
+      Branch {
+        Points        [375, 235]
+        Branch {
+          DstComponent  "LHF"
+          DstTerminal   2
+        }
+        Branch {
+          DstComponent  "LBF"
+          DstTerminal   1
+        }
+      }
+      Branch {
+        Points        [490, 235]
+        Branch {
+          Points        [545, 235]
+          DstComponent  "I"
+          DstTerminal   1
+        }
+        Branch {
+          Points        [490, 270; 505, 270]
+          DstComponent  "Ve"
+          DstTerminal   1
+        }
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "CBF"
+      SrcTerminal   1
+      DstComponent  "LBF"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Am1"
+      SrcTerminal   2
+      Points        [160, 235]
+      DstComponent  "Ri"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Ve"
+      SrcTerminal   3
+      Points        [560, 320; 560, 350]
+      DstComponent  "Scope"
+      DstTerminal   1
+    }
+  }
+  Analysis {
+    Type          ACSweep
+    Name          "AC Sweep"
+    ShowLegend    "2"
+    OperatingPoint "1"
+    TimeSpan      "-1"
+    StartTime     "0"
+    Tolerance     "1e-4"
+    MaxIter       "20"
+    FrequencyRange "[1 10000]"
+    FrequencyScale "2"
+    AdditionalFreqs "100"
+    AmplitudeRange "1e-3"
+    NumPoints     "10000"
+    Perturbation  "Perturbation"
+    Response      "Response"
+    JacobianPerturbation "1e-4"
+    JacobianCalculation "2"
+    InitCycles    "0"
+  }
+}
